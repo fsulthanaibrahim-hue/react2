@@ -1,5 +1,5 @@
-//********************************************DAY-1****************************************/
-//    //----------------------------useReducer-----------------------------------------
+// ********************************************DAY-1****************************************/
+   //----------------------------useReducer-----------------------------------------
 // import React, { useReducer } from "react";
 
 // const initialState = 0
@@ -18,7 +18,7 @@
 // function CounterOne() {
 //      const [count, dispatch] = useReducer(reducer, initialState);
 //     return (
-//         <div>
+//         <div style={{ padding: "20px" }}>
 //             <div>Count - {count}</div>
 //             <button onClick={() => dispatch("increment")}>Increment</button>
 //             <button onClick={() => dispatch("decrement")}>Decrement</button>
@@ -29,7 +29,7 @@
 // export default CounterOne;
 
 
-//-------------------------------useReducer Vs useState--------------------------------------
+// ------------------------------useReducer Vs useState------------------------------------
 // import React, { useReducer } from "react";
 // const initialState = { count: 0, step: 1 };
 // const reducer = (state, action) => {
@@ -41,7 +41,9 @@
 //         case "reset":
 //             return initialState;
 //         case "setStep":
-//             return state;            
+//             return { ...state, step: action.value };            
+//         default:
+//             return state;    
 //     }
 // };
 // function CounterUseReducer() {
@@ -63,15 +65,30 @@
 // export default CounterUseReducer;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+// import React, { useReducer } from "react";
+// const initialState = 0
+// const reducer = (state, action) => {
+//    switch(action) {
+//     case "increase":
+//         return state + 1;
+//      case "decrease":
+//         return state - 1;
+//       case "reset":
+//         return initialState;
+//       default:
+//         return state;       
+//    }
+// };
+// function CounterOne() {
+//     console.log("rendered")
+//     const [count, dispatch] = useReducer(reducer, initialState);
+//     return (
+//         <div>
+//             <div>Count : {count}</div>
+//             <button onClick={() =>dispatch("increase")}>Increase</button>
+//             <button onClick={() => dispatch("decrease")}>Decrease</button>
+//             <button onClick={() => dispatch("reset")}>Reset</button>
+//         </div>
+//     );
+// }
+// export default CounterOne;
